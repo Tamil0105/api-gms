@@ -4,7 +4,7 @@ import { Contact } from 'src/entity';
 import { Repository } from 'typeorm';
 import { CreateContactDto } from './create-contact.dto';
 import { MailService } from 'src/lib/mailService';
-import { CurrentUserService } from 'utils/currentUser/main';
+import { CurrentUserService } from '../../utils/currentUser/main';
 
 @Injectable()
 export class ContactService {

@@ -5,7 +5,7 @@ import { Request } from 'express';
 import * as jwt from 'jsonwebtoken';
 import { CacheService } from 'src/lib/cache/main';
 import { User } from 'src/entity';
-import { CurrentUserService } from 'utils/currentUser/main';
+import { CurrentUserService } from '../../../utils/currentUser/main';
 import { DataSource } from 'typeorm';
 
 @Injectable()

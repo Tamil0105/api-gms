@@ -5,7 +5,7 @@ import { ContactController } from './contact.controller';
 import { Contact } from 'src/entity';
 import { MailService } from 'src/lib/mailService';
 import { JwtService } from '@nestjs/jwt';
-import { CurrentUserService } from 'utils/currentUser/main';
+import { CurrentUserService } from '../../utils/currentUser/main';
 import { Repository } from 'typeorm';
 
 @Module({

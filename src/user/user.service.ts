@@ -4,7 +4,7 @@ import { User } from 'src/entity';
 import { Authenticate } from '../guards/auth/decorator';
 import { MailService } from 'src/lib/mailService';
 import { Repository } from 'typeorm';
-import { CurrentUserService } from 'utils/currentUser/main';
+import { CurrentUserService } from '../../utils/currentUser/main';
 
 @Injectable()
 @Authenticate()
