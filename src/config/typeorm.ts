@@ -1,6 +1,9 @@
 
 import { registerAs } from "@nestjs/config";
 import { config as dotenvConfig } from 'dotenv';
+import { Contact, User } from "../entity";
+import { NewsFeed } from "../entity/news.entity";
+import { Testimonial } from "../entity/testimonials.entity";
 import { DataSource, DataSourceOptions } from "typeorm";
 
 dotenvConfig({ path: '.env' });
@@ -12,7 +15,7 @@ const config = {
   username: 'avnadmin',
   password: 'AVNS_U8r_wbX49tyOfvkhVeV',
   database: 'defaultdb',
-  entities: ["dist/**/*.entity{.ts,.js}"],
+  entities: [User,NewsFeed,Contact,Testimonial],
   migrations: ["dist/migrations/*{.ts,.js}"],// Migration path
   synchronize: true, // Set to 'false' in production
   logging: true,
