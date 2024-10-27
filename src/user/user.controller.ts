@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Req, Query, Put } from '@nestjs/common';
 import { UserService } from './user.service';
-import { User } from 'src/entity';
+import { User } from '../entity';
 import { Authenticate } from '../guards/auth/decorator';
 
 @Controller('/api/v1/users')

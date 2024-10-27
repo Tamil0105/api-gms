@@ -1,6 +1,6 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
 import { randomBytes } from 'crypto';
-import { StorageServiceS3 } from 'src/lib/S3bucket/s3';
+import { StorageServiceS3 } from '../lib/S3bucket/s3';
 
 @Injectable()
 export class ImageUploadService {

@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
-import { NewsFeed } from 'src/entity/news.entity';
+import { NewsFeed } from '../entity/news.entity';
 import { NewsFeedService } from './newsFeed.service';
 
 

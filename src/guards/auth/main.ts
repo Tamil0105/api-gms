@@ -3,8 +3,8 @@ import { JwtService } from '@nestjs/jwt';
 import jwtDecode from 'jwt-decode';
 import { Request } from 'express';
 import * as jwt from 'jsonwebtoken';
-import { CacheService } from 'src/lib/cache/main';
-import { User } from 'src/entity';
+import { CacheService } from '../../lib/cache/main';
+import { User } from '../../entity/user.entity';
 import { CurrentUserService } from '../../../utils/currentUser/main';
 import { DataSource } from 'typeorm';
 

@@ -1,9 +1,9 @@
 import { BadRequestException, ForbiddenException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Contact } from 'src/entity';
+import { Contact } from '../entity';
 import { Repository } from 'typeorm';
 import { CreateContactDto } from './create-contact.dto';
-import { MailService } from 'src/lib/mailService';
+import { MailService } from '../lib/mailService';
 import { CurrentUserService } from '../../utils/currentUser/main';
 
 @Injectable()

@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { TestimonialsService } from './testimonials.service';
-import { Testimonial } from 'src/entity/testimonials.entity';
+import { Testimonial } from '../entity/testimonials.entity';
 
 @Controller('/api/v1/testimonials')
 export class TestimonialsController {

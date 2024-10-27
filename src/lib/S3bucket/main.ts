@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { S3 } from '@aws-sdk/client-s3';
-// import { AppConfigService } from 'src/config';
 
 @Injectable()
 export class StorageService extends S3 {
