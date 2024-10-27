@@ -2,7 +2,7 @@ import { Body, Controller, Get, Patch, Post, Query } from '@nestjs/common';
 import { ContactService } from './contact.service';
 import { Contact } from 'src/entity';
 import { CreateContactDto } from './create-contact.dto';
-import { Authenticate } from 'src/guards/auth/decorator';
+import { Authenticate } from '../guards/auth/decorator';
 
 
 @Controller('api/v1/contacts')

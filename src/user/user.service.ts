@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/entity';
-import { Authenticate } from 'src/guards/auth/decorator';
+import { Authenticate } from '../guards/auth/decorator';
 import { MailService } from 'src/lib/mailService';
 import { Repository } from 'typeorm';
 import { CurrentUserService } from 'utils/currentUser/main';
