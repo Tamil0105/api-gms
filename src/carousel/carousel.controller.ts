@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Param, Patch, Delete } from '@nestjs/common';
 import { CarouselService } from './carousel.service'
-import { Carousel } from 'src/entity/carouselImage';
+import { Carousel } from '../entity/carouselImage';
 import { CreateCarouselDto, UpdateCarouselDto } from './carousel.dto';
 
 @Controller('/api/v1/carousel')
