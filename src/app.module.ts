@@ -14,6 +14,7 @@ import { CacheModule } from './lib/cache';
 import { AuthGuardModule } from './guards/auth/authGuard.module';
 import { User } from './entity';
 import { UserModule } from './user/user.module';
+import { CarouselModule } from './carousel/carousel.module';
 
 
 @Module({
@@ -35,6 +36,7 @@ import { UserModule } from './user/user.module';
     TestimonialsModule,
     S3StorageServiceModule,
     NewsFeedModule,
+    CarouselModule
     
   ],
   controllers: [AppController],

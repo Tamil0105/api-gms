@@ -15,6 +15,15 @@ export class AuthService {
       console.log(username, pass);
       const user = await this.userService.findByUsername(username);
       
+
+      if(user.password===pass){
+        const {...result} = user
+                return result;
+
+      }{
+                throw new ForbiddenException ('Invalid credentials')
+
+      }
       // Check if user exists and password matches
       // if (user && bcrypt.compareSync(pass, user.password)) {
       //   const { password, ...result } = user; 

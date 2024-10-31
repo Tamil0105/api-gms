@@ -17,8 +17,76 @@ export class ContactService {
   ) {}
 
   async createContact(createContactDto: CreateContactDto): Promise<Contact> {
-    const { email, phone } = createContactDto;
+  
+  
+    const { email, phone,name } = createContactDto;
 
+    const body = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+        .email-container {
+          font-family: Arial, sans-serif;
+          color: #333;
+          padding: 20px;
+          background-color: #f7f7f7;
+        }
+        .header {
+          background-color: #4CAF50;
+          padding: 10px;
+          text-align: center;
+          color: #fff;
+        }
+        .content {
+          margin: 20px 0;
+        }
+        .footer {
+          font-size: 12px;
+          color: #777;
+          text-align: center;
+          padding: 10px;
+        }
+        .button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          border-radius: 5px;
+        }
+        .user-details {
+          background-color: #e8f5e9;
+          padding: 10px;
+          border-radius: 5px;
+        }
+        .user-details p {
+          margin: 5px 0;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="email-container">
+        <div class="header">
+          <h1>New User Alert: Welcome to Our Service!</h1>
+        </div>
+        <div class="content">
+          <p>Hi Team,</p>
+          <p>A new user has just joined our service! Here are their details:</p>
+          <div class="user-details">
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Signup Date:</strong> ${new Date().toDateString()}</p>
+          </div>
+          <p>To view more details about this user, click the button below:</p>
+          <p><a href="https://example.com/users/12345" class="button">View User Profile</a></p>
+        </div>
+        <div class="footer">
+          <p>&copy; 2024 Our Service, Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
     // Check if a contact with the same email or phone already exists
     const existingContact = await this.contactRepository.findOne({
       where: [{ email }, { phone }],
@@ -32,7 +100,7 @@ export class ContactService {
     await this.contactRepository.save(contact);
 
     // Send email notification after contact is created
-    // await this.mailerService.sendContactCreatedEmail(email);
+    await this.mailerService.sendEmail(this.currentUser.get.email,'New user reached you',body);
 
     return this.contactRepository.save(contact);
   }

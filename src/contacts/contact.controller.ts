@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Patch, Post, Query } from '@nestjs/common';
 import { ContactService } from './contact.service';
-import { Contact } from 'src/entity';
+import { Contact } from '../entity/contacts.entity';
 import { CreateContactDto } from './create-contact.dto';
 import { Authenticate } from '../guards/auth/decorator';
 
