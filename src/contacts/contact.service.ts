@@ -89,7 +89,7 @@ export class ContactService {
   `;
     // Check if a contact with the same email or phone already exists
     const existingContact = await this.contactRepository.findOne({
-      where: [{ email }, { phone }],
+      where: [{ email }],
     });
 
     if (existingContact) {
