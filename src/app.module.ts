@@ -15,6 +15,7 @@ import { AuthGuardModule } from './guards/auth/authGuard.module';
 import { User } from './entity';
 import { UserModule } from './user/user.module';
 import { CarouselModule } from './carousel/carousel.module';
+import { PortfolioModule } from './portfolio/portfolio.module';
 
 
 @Module({
@@ -36,7 +37,8 @@ import { CarouselModule } from './carousel/carousel.module';
     TestimonialsModule,
     S3StorageServiceModule,
     NewsFeedModule,
-    CarouselModule
+    CarouselModule,
+    PortfolioModule,
     
   ],
   controllers: [AppController],

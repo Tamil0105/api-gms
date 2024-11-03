@@ -5,7 +5,8 @@ import { Contact, User } from "../entity";
 import { NewsFeed } from "../entity/news.entity";
 import { Testimonial } from "../entity/testimonials.entity";
 import { DataSource, DataSourceOptions } from "typeorm";
-import { Carousel } from "src/entity/carouselImage";
+import { Carousel } from "../entity/carouselImage";
+import { Portfolio } from "../entity/portFolio.entity";
 
 dotenvConfig({ path: '.env' });
 
@@ -16,7 +17,7 @@ const config = {
   username: 'avnadmin',
   password: 'AVNS_U8r_wbX49tyOfvkhVeV',
   database: 'defaultdb',
-  entities: [User,NewsFeed,Contact,Testimonial,Carousel],
+  entities: [User,NewsFeed,Contact,Testimonial,Carousel,Portfolio],
   migrations: ["dist/migrations/*{.ts,.js}"],// Migration path
   synchronize: true, // Set to 'false' in production
   logging: true,
