@@ -1,14 +1,20 @@
-import { Entity, Column, PrimaryColumn, BeforeInsert } from 'typeorm';
+
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('portfolio')
 export class Portfolio {
-  @PrimaryColumn({ type: 'int', width: 5 })
+  @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ length: 100 })
-  url: string;
-  @BeforeInsert()
-  generateId() {
-    this.id = Math.floor(10000 + Math.random() * 90000); // Generate a 5-digit number
-  }
+  @Column()
+  date: Date;
+
+  @Column('text')
+  details: string;
+
+  @Column({ type: 'enum', enum: ['image', 'video','youtube','instagram'] })
+  fileType: 'image' | 'video'|'youtube'|'instagram';
+
+  @Column()
+  mediaUrl: string;
 }

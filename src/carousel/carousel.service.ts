@@ -46,12 +46,18 @@ export class CarouselService {
     }
   
     // Extract the key from the URL
-    const Key = data.url.substring(data.url.lastIndexOf('/') + 1); // Adjust to get the correct key
+    const KeyOne = data.url.substring(data.url.lastIndexOf('/') + 1); // Adjust to get the correct key
+    const KeyTwo = data.phoneUrl.substring(data.phoneUrl.lastIndexOf('/') + 1); // Adjust to get the correct key
+
   
     // Delete the object from the S3 bucket
     await this.s3.delete({
       Bucket: 'landing-page-imgg',
-      Key,
+      Key:KeyOne,
+    });
+    await this.s3.delete({
+      Bucket: 'landing-page-imgg',
+      Key:KeyTwo,
     });
   
     // Delete the carousel item from the repository
