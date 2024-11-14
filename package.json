@@ -32,7 +32,9 @@
     "@nestjs/jwt": "^10.2.0",
     "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "^10.4.7",
+    "@nestjs/swagger": "^8.0.5",
     "@nestjs/typeorm": "^10.0.2",
+    "@vendia/serverless-express": "^4.12.6",
     "@vercel/node": "^3.2.24",
     "aws-sdk": "^2.1691.0",
     "bcryptjs": "^2.4.3",
@@ -52,7 +54,11 @@
     "rxjs": "^7.8.1",
     "typeorm": "^0.3.20"
   },
-  "keywords": ["Node.js", "Express", "Docker"],
+  "keywords": [
+    "Node.js",
+    "Express",
+    "Docker"
+  ],
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
