@@ -60,7 +60,6 @@ export class CarouselService {
       Key:KeyTwo,
     });
   
-    // Delete the carousel item from the repository
     await this.carouselRepository.delete(id);
   
     // Return an object indicating successful deletion
