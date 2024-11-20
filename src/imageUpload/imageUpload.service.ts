@@ -9,6 +9,7 @@ export class ImageUploadService {
   // Upload a new image to S3
   async createImage(param: { file: any; folderKey: string }) {
     try {
+      
       const { file } = param;
       const fileId = randomBytes(10).toString('hex');
       const Key = `${param.folderKey}/${fileId}`;
