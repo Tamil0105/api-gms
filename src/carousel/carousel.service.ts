@@ -1,9 +1,9 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Carousel } from 'src/entity/carouselImage';
+import { Carousel } from '../entity/carouselImage';
 import { Repository } from 'typeorm';
 import { CreateCarouselDto, UpdateCarouselDto } from './carousel.dto';
-import { StorageServiceS3 } from 'src/lib/S3bucket/s3';
+import { StorageServiceS3 } from '../lib/S3bucket/s3';
 
 
 @Injectable()

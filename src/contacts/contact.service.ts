@@ -100,7 +100,7 @@ export class ContactService {
     await this.contactRepository.save(contact);
 
     // Send email notification after contact is created
-    await this.mailerService.sendEmail(this.currentUser.get.email,'New user reached you',body);
+    // await this.mailerService.sendEmail(this.currentUser.get.email,'New user reached you',body);
 
     return this.contactRepository.save(contact);
   }
