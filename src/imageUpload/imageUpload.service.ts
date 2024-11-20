@@ -31,6 +31,8 @@ export class ImageUploadService {
 
   // Delete an image from S3
   async deleteImage(param: { folderKey: string; fileKey: string }) {
+
+    
     try {
       const Key = `${param.folderKey}/${param.fileKey}`;
       await this.s3.delete({
