@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Contact } from '../entity';
 import { Repository } from 'typeorm';
 import { CreateContactDto } from './create-contact.dto';
-import { MailService } from '../lib/mailService';
+import { MailService } from '../lib/nodeMailer';
 import { CurrentUserService } from '../../utils/currentUser/main';
 
 @Injectable()
@@ -100,7 +100,7 @@ export class ContactService {
     await this.contactRepository.save(contact);
 
     // Send email notification after contact is created
-    // await this.mailerService.sendEmail(this.currentUser.get.email,'New user reached you',body);
+    await this.mailerService.sendEmail(this.currentUser.get.email,'New user reached you',body);
 
     return this.contactRepository.save(contact);
   }
