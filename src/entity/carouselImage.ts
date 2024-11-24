@@ -5,10 +5,10 @@ export class Carousel {
   @PrimaryColumn({ type: 'int', width: 5 })
   id: number;
 
-  @Column({ length: 100 })
+  @Column({ length: 255 })
   url: string;
 
-  @Column({ length: 100 ,default:"" } )
+  @Column({ length: 255 ,default:"" } )
   phoneUrl: string;
   
  ;
