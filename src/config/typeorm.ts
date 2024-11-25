@@ -12,12 +12,12 @@ dotenvConfig({ path: '.env' });
 
 const config = {
   type: 'postgres', // Change this according to your DB (e.g., 'mysql')
-  host: 'pg-1dbd63ba-chysir-8ac8.i.aivencloud.com',
-  port: 17179, // Change according to your DB
-  username: 'avnadmin',
-  password: 'AVNS_U8r_wbX49tyOfvkhVeV',
-  database: 'defaultdb',
-  entities: [User,NewsFeed,Contact,Testimonial,Carousel,Portfolio],
+  host: 'aws-0-ap-southeast-1.pooler.supabase.com',
+  port: 5432, // Change according to your DB
+  username: 'postgres.bbbzdlyncfcnmzxxaubm',
+  password: 'bcfd4UKJWgFXbBDs',
+  database: 'postgres',
+  entities:  [User,NewsFeed,Contact,Testimonial,Carousel,Portfolio],
   migrations: ["dist/migrations/*{.ts,.js}"],// Migration path
   synchronize: true, // Set to 'false' in production
   logging: true,
