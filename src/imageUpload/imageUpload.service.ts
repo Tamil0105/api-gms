@@ -59,7 +59,7 @@ async createImage(param: { file: any; folderKey: string }) {
   // return data.path;
     return {
       created: true,
-      url: `https://hksdwmfmjjtlheqajukn.supabase.co/storage/v1/object/${data.fullPath}`,
+      url: `https://flfrfjdlsdhjupowgrxb.supabase.co/storage/v1/object/${data.fullPath}`,
     };
   } catch (error) {
     console.log("500")
@@ -174,7 +174,7 @@ async createImage(param: { file: any; folderKey: string }) {
     console.log('File updated successfully:', data);
     return {
       created: true,
-      url: `https://hksdwmfmjjtlheqajukn.supabase.co/storage/v1/object/public/banner-img/${param.oldKey}`,
+      url: `https://flfrfjdlsdhjupowgrxb.supabase.co/storage/v1/object/public/banner-img/${param.oldKey}`,
     };
     } catch (error) {
       throw new BadRequestException('Error updating the image');
