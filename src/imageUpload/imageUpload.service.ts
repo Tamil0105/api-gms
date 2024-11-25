@@ -3,8 +3,8 @@ import { randomBytes } from 'crypto';
 import { StorageServiceS3 } from '../lib/S3bucket/s3';
 import  * as sharp from 'sharp';
 import { createClient } from '@supabase/supabase-js';
-const supabaseUrl = 'https://flfrfjdlsdhjupowgrxb.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZsZnJmamRsc2RoanVwb3dncnhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI1MTAzMjAsImV4cCI6MjA0ODA4NjMyMH0.PraqqL7rDOkvf8PQCtPVYQAZBtK5EubNywRMbbjZ4QQ';
+const supabaseUrl = 'https://bbbzdlyncfcnmzxxaubm.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJiYnpkbHluY2Zjbm16eHhhdWJtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI1MTY3MjQsImV4cCI6MjA0ODA5MjcyNH0.Xt529_oy5tz7iZo33pHs1qNj6PHi4419ZL9BXMarNhw'
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 @Injectable()
@@ -42,7 +42,7 @@ async createImage(param: { file: any; folderKey: string }) {
     // });
     // console.log(res)
     const { data, error } = await supabase.storage
-    .from('gms') // Replace 'images' with your bucket name
+    .from('gms-api') // Replace 'images' with your bucket name
     .upload(`public/${Key}`, fileBuffer, {
       cacheControl: '3600',
       upsert: false,
@@ -57,9 +57,11 @@ async createImage(param: { file: any; folderKey: string }) {
 
   // console.log('File uploaded successfully:', data);
   // return data.path;
+  console.log(data)
+
     return {
       created: true,
-      url: `https://flfrfjdlsdhjupowgrxb.supabase.co/storage/v1/object/${data.fullPath}`,
+      url: `https://bbbzdlyncfcnmzxxaubm.supabase.co/storage/v1/object/${data.fullPath}`,
     };
   } catch (error) {
     console.log("500")
@@ -174,7 +176,7 @@ async createImage(param: { file: any; folderKey: string }) {
     console.log('File updated successfully:', data);
     return {
       created: true,
-      url: `https://flfrfjdlsdhjupowgrxb.supabase.co/storage/v1/object/public/banner-img/${param.oldKey}`,
+      url: `https://bbbzdlyncfcnmzxxaubm.supabase.co/storage/v1/object/public/banner-img/${param.oldKey}`,
     };
     } catch (error) {
       throw new BadRequestException('Error updating the image');
