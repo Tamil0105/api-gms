@@ -3,9 +3,8 @@ import { randomBytes } from 'crypto';
 import { StorageServiceS3 } from '../lib/S3bucket/s3';
 import  * as sharp from 'sharp';
 import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = 'https://hksdwmfmjjtlheqajukn.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhrc2R3bWZtamp0bGhlcWFqdWtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIwNjgwMTIsImV4cCI6MjA0NzY0NDAxMn0.vc_r5FHzjAGZRS1HbN3349JiLVpr7Nlc58TDnCAd6Ew';
+const supabaseUrl = 'https://flfrfjdlsdhjupowgrxb.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZsZnJmamRsc2RoanVwb3dncnhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI1MTAzMjAsImV4cCI6MjA0ODA4NjMyMH0.PraqqL7rDOkvf8PQCtPVYQAZBtK5EubNywRMbbjZ4QQ';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 @Injectable()
