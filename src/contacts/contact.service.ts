@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Contact } from '../entity';
 import { Repository } from 'typeorm';
 import { CreateContactDto } from './create-contact.dto';
-import { MailService } from '../lib/nodeMailer';
+import { MailService } from '../lib/resendMailService';
 import { CurrentUserService } from '../../utils/currentUser/main';
 
 @Injectable()
@@ -16,7 +16,7 @@ export class ContactService {
 
   ) {}
 
-  async createContact(createContactDto: CreateContactDto): Promise<Contact> {
+  async createContact(createContactDto: CreateContactDto): Promise<any> {
   
   
     const { email, phone,name } = createContactDto;
@@ -67,7 +67,7 @@ export class ContactService {
     <body>
       <div class="email-container">
         <div class="header">
-          <h1>New User Alert: Welcome to Our Service!</h1>
+          <h1>New User Alert!</h1>
         </div>
         <div class="content">
           <p>Hi Team,</p>
@@ -75,10 +75,8 @@ export class ContactService {
           <div class="user-details">
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Signup Date:</strong> ${new Date().toDateString()}</p>
+            <p><strong>Date:</strong> ${new Date().toDateString()}</p>
           </div>
-          <p>To view more details about this user, click the button below:</p>
-          <p><a href="https://example.com/users/12345" class="button">View User Profile</a></p>
         </div>
         <div class="footer">
           <p>&copy; 2024 Our Service, Inc. All rights reserved.</p>
@@ -87,6 +85,66 @@ export class ContactService {
     </body>
     </html>
   `;
+  const bodyForNewUser = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            color: #0f150e;
+        }
+        h2 {
+            color: #0f150e;
+            font-size: 24px;
+        }
+        p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        a {
+            color: #0f150e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Thank You for Contacting Us!</h2>
+        <p>We’ve received your message and will get back to you shortly.</p>
+        <p>If your request is urgent, please call us at <a href="tel:9715131313">9715131313</a>.</p>
+        <p>You can also reach us via email at <a href="mailto:gameon.solution.317@gmail.com">gameon.solution.317@gmail.com</a>.</p>
+        <p>Our Address:</p>
+        <p>Seethammal Colony 2nd Cross St,<br>Lubdhi Colony, Alwarpet,<br>Chennai, Tamil Nadu 600018</p>
+        <div class="footer">
+            <p>© 2024 GameOn Solutions</p>
+        </div>
+    </div>
+</body>
+</html>
+`
     // Check if a contact with the same email or phone already exists
     const existingContact = await this.contactRepository.findOne({
       where: [{ email }],
@@ -101,6 +159,9 @@ export class ContactService {
 
     // Send email notification after contact is created
     await this.mailerService.sendEmail(this.currentUser.get.email,'New user reached you',body);
+    //email for new user
+     await this.mailerService.sendEmail(email,'Thank you for contacting Us',bodyForNewUser);
+
 
     return this.contactRepository.save(contact);
   }
