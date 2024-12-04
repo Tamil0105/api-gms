@@ -21,6 +21,8 @@ export class ContactService {
   
     const { email, phone,name } = createContactDto;
 
+    clg
+
     const body = `
     <!DOCTYPE html>
 <html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -382,7 +384,7 @@ export class ContactService {
                     </div>
                     <div><span style="color: rgb(122, 122, 122);">﻿</span>
                     </div>
-                    <div><span style="font-weight: 700;font-style: normal;color: rgb(122, 122, 122);">Email:</span><span style="font-weight: 400;font-style: normal;color: rgb(122, 122, 122);"> </span><a href="mailto:${email} target="_blank" style="text-decoration: none; color: #9b9b9b;"><span style="text-decoration: underline;font-weight: 400;font-style: normal;color: rgb(122, 122, 122);">tamil16399@gmail.com</span></a><span style="color: rgb(122, 122, 122);">﻿</span>
+                    <div><span style="font-weight: 700;font-style: normal;color: rgb(122, 122, 122);">Email:</span><span style="font-weight: 400;font-style: normal;color: rgb(122, 122, 122);"> </span><a href="mailto:${email} target="_blank" style="text-decoration: none; color: #9b9b9b;"><span style="text-decoration: underline;font-weight: 400;font-style: normal;color: rgb(122, 122, 122);">${email}</span></a><span style="color: rgb(122, 122, 122);">﻿</span>
                     </div>
                     <div><span style="color: rgb(122, 122, 122);">﻿</span>
                     </div>
