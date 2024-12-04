@@ -21,7 +21,7 @@ export class ContactService {
   
     const { email, phone,name } = createContactDto;
 
-    clg
+
 
     const body = `
     <!DOCTYPE html>
