@@ -10,12 +10,12 @@ export class MailService {
   }
   
 
-  async sendEmail(to: string,  subject: string, body: string): Promise<any> {
+  async sendEmail(to: string, subject: string, body: string): Promise<any> {
 
     try {
       //  const resend = new Resend('re_CqJemkqa_DYTuCGLd44KoiJhDd5YkQrCL'); // Initialize Resend instance
       const mailOptions = {
-        from: "sales@gameonsolution.in", // Sender's email address
+        from: "contact@gameonsolution.in", // Sender's email address
         to: to, // Recipient's email address
         subject: subject, // Subject line
         html: body, // HTML content
