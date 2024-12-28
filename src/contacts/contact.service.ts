@@ -784,6 +784,7 @@ export class ContactService {
                     <div><span>&#xFEFF;</span>
                     </div>
                     <div><span>You can also reach us via email at </span><a href="mailto:gameon.solution.317@gmail.com" target="_blank" style="text-decoration: none; color: #9b9b9b;"><span style="text-decoration: underline;">gameon.solution.317@gmail.com</span></a><span>.</span>
+                   <a href="mailto:sales@gameonsolution.in" target="_blank" style="text-decoration: none; color: #9b9b9b;"><span style="text-decoration: underline;">sales@gameonsolution.in</span></a><span>.</span>
                     </div>
                    </div>
                   </td>
@@ -958,9 +959,11 @@ export class ContactService {
     await this.contactRepository.save(contact);
 
     // Send email notification after contact is created
-    await this.mailerService.sendEmail(this.currentUser.get.email,'New user reached you',body);
+      await this.mailerService.sendEmail(this.currentUser.get.email,'New user reached you',body);
     //email for new user
      await this.mailerService.sendEmail(email,'Thank you for contacting Us',bodyForNewUser);
+     await this.mailerService.sendEmail('gameon.solution.317@gmail.com','New user reached you',body);
+
 
 
     return this.contactRepository.save(contact);
